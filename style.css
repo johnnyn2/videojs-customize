@@ -87,6 +87,10 @@ body {
     justify-content: center;
 }
 
+#videoPlayer .vjs-playback-rate .vjs-menu {
+    margin-bottom: 2.3em;
+}
+
 /* hide control bar when pause video */
 #videoPlayer.vjs-paused .vjs-control-bar {
     opacity: 0;

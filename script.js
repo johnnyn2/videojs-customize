@@ -1,5 +1,8 @@
 const playbackUrl = 'https://fcc3ddae59ed.us-west-2.playback.live-video.net/api/video/v1/us-west-2.893648527354.channel.DmumNckWFTqz.m3u8';
 
+// We can set the element position in control bar so setting children elements
+// https://stackoverflow.com/questions/45727017/how-to-change-the-position-of-videojs-control-bar-elements-order
+
 // Initialize player
 (function () {
     var player = videojs('videoPlayer', {
