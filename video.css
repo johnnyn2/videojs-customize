@@ -127,6 +127,7 @@ interacting with the player.
     color: black;
     font-size: 1.6em;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    overflow: auto;
 }
 
 .quiz-container div {
