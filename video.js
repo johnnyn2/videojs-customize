@@ -104,8 +104,6 @@ const playbackUrl = 'https://fcc3ddae59ed.us-west-2.playback.live-video.net/api/
         },
     ]);
 
-    console.log('control bar: ', player.controlBar.children());
-
     // Add the TitleBar as a child of the player and provide it some text 
     // in its options.
     player.addChild('TitleBar', { text: 'Simple Cartoon' });
@@ -133,7 +131,7 @@ const playbackUrl = 'https://fcc3ddae59ed.us-west-2.playback.live-video.net/api/
 
         // Show the "big play" button when the stream is paused
         const videoContainerEl = document.querySelector("#liveVideo");
-        videoContainerEl.addEventListener("click", () => {
+        videoContainerEl.addEventListener("click", function() {
             if (videoJSPlayer.paused()) {
                 videoContainerEl.classList.remove("vjs-has-started");
             } else {
@@ -143,9 +141,9 @@ const playbackUrl = 'https://fcc3ddae59ed.us-west-2.playback.live-video.net/api/
 
         // Logs low latency setting and latency value 5s after playback starts
         const PlayerState = videoJSPlayer.getIVSEvents().PlayerState;
-        ivsPlayer.addEventListener(PlayerState.PLAYING, () => {
+        ivsPlayer.addEventListener(PlayerState.PLAYING, function() {
             console.log("Player State - PLAYING");
-            setTimeout(() => {
+            setTimeout(function() {
                 console.log(
                     `This stream is ${ivsPlayer.isLiveLowLatency() ? "" : "not "
                     }playing in ultra low latency mode`
@@ -156,12 +154,12 @@ const playbackUrl = 'https://fcc3ddae59ed.us-west-2.playback.live-video.net/api/
 
         // Log errors
         const PlayerEventType = videoJSPlayer.getIVSEvents().PlayerEventType;
-        ivsPlayer.addEventListener(PlayerEventType.ERROR, (type, source) => {
+        ivsPlayer.addEventListener(PlayerEventType.ERROR, function(type, source) {
             console.warn("Player Event - ERROR: ", type, source);
         });
 
         // Log and display timed metadata
-        ivsPlayer.addEventListener(PlayerEventType.TEXT_METADATA_CUE, (cue) => {
+        ivsPlayer.addEventListener(PlayerEventType.TEXT_METADATA_CUE, function(cue) {
             const metadataText = cue.text;
             const position = ivsPlayer.getPosition().toFixed(2);
             console.log(
