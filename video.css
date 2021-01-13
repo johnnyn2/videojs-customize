@@ -105,3 +105,50 @@ interacting with the player.
 #videoPlayer.vjs-user-active.vjs-has-started .vjs-title-bar{
     display: block;
 }
+
+.quiz {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, 0%);
+    width: 50%;
+    height: 50%;
+    border-radius: 3em;
+    background-color: white;
+    box-shadow: 0 6px 30px rgba(0, 0, 0, 0.3);
+}
+
+.quiz-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    padding: 2em;
+    color: black;
+    font-size: 1.6em;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.quiz-container div {
+    padding: 0.7em 0.5em;
+}
+
+.question {
+    margin-bottom: 0.5em;
+}
+
+.answer {
+    border-radius: 2em;
+    background-color: aqua;
+    margin: 0.2em;
+    text-align: center;
+    cursor: pointer;
+}
+
+.answer:hover {
+    background-color: brown;
+}
+
+.correct {
+    background-color: greenyellow;
+}

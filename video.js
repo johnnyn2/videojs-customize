@@ -3,6 +3,37 @@ const playbackUrl = 'https://fcc3ddae59ed.us-west-2.playback.live-video.net/api/
 // We can set the element position in control bar so setting children elements
 // https://stackoverflow.com/questions/45727017/how-to-change-the-position-of-videojs-control-bar-elements-order
 
+const triggerQuiz = ({question, answers, correctIndex}) => {
+    const oldQuiz = document.getElementsByClassName('quiz')[0];
+    if (typeof oldQuiz !== 'undefined') {
+        oldQuiz.remove();
+    }
+    const quiz = document.createElement('div');
+    quiz.classList.add('quiz');
+    const q = document.createElement('div');
+    q.innerHTML = question;
+    q.classList.add('question');
+    const quizContainer = document.createElement('div');
+    quizContainer.classList.add('quiz-container');
+    quizContainer.append(q);
+    answers.forEach(ans => {
+        const answEl = document.createElement('div');
+        answEl.innerHTML = ans;
+        answEl.classList.add('answer');
+        answEl.addEventListener('click', e => {
+            if (answEl.innerHTML === answers[correctIndex]) {
+                console.log('correct');
+                answEl.classList.add('correct');
+            } else {
+                console.log('wrong');
+            }
+        }, true)
+        quizContainer.append(answEl);
+    })
+    quiz.append(quizContainer);
+    document.getElementById('liveVideo').append(quiz);
+}
+
 // Initialize player
 (function () {
     // Get the Component base class from Video.js
@@ -165,6 +196,7 @@ const playbackUrl = 'https://fcc3ddae59ed.us-west-2.playback.live-video.net/api/
             console.log(
                 `Player Event - TEXT_METADATA_CUE: "${metadataText}". Observed ${position}s after playback started.`
             );
+            triggerQuiz(JSON.parse(metadataText));
         });
 
         // Enables manual quality selection plugin
