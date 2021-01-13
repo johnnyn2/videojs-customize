@@ -27,7 +27,7 @@ const triggerQuiz = ({question, answers, correctIndex}) => {
             } else {
                 console.log('wrong');
             }
-        }, true)
+        })
         quizContainer.append(answEl);
     })
     quiz.append(quizContainer);
