@@ -10,7 +10,7 @@
 .inputarea .textarea {
     background-color: white;
     border-radius: 2em;
-    padding: 0.5em 0.7em;
+    padding: 0.5em 2em;
     display: flex;
     flex: 1;
 }
