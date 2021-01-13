@@ -95,3 +95,30 @@ body {
 #videoPlayer.vjs-paused .vjs-control-bar {
     opacity: 0;
 }
+
+/* Custom video title */
+#videoPlayer .vjs-title-bar {
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    
+    /*
+      By default, do not show the title bar.
+    */
+    display: none;
+    font-size: 2em;
+    padding: .5em;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+  
+/* 
+Only show the title bar after playback has begun (so as not to hide
+the big play button) and only when paused or when the user is 
+interacting with the player.
+*/
+#videoPlayer.vjs-paused.vjs-has-started .vjs-title-bar,
+#videoPlayer.vjs-user-active.vjs-has-started .vjs-title-bar{
+    display: block;
+}
