@@ -1,6 +1,8 @@
 import {RippleButton} from './button/index.js';
 
-(function() {
-    const button = document.getElementById("sendBtn");
-    RippleButton(button);
+(() => {
+    const connectButton = document.getElementById("connectBtn");
+    const sendButton = document.getElementById("sendBtn");
+    RippleButton(connectButton);
+    RippleButton(sendButton);
 })()

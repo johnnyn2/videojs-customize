@@ -9,7 +9,7 @@
 
 .inputarea .textarea {
     background-color: white;
-    border-radius: 1em;
+    border-radius: 2em;
     padding: 0.5em 0.7em;
     display: flex;
     flex: 1;
@@ -18,8 +18,7 @@
 .textarea input {
     font-size: 1.2em;
     border:none;
-    width: fit-content;
-    max-width: 100%;
+    width: 100%;
 }
 
 .textarea input:focus {
@@ -28,13 +27,15 @@
 
 #sendBtn {
     background-color: #6200ee;
-    padding: 1rem 2rem;
-    border-radius: 0.25rem;
+    padding: 1rem 1rem;
+    border-radius: 2em;
 }
 
 .chat {
     display: flex;
     flex-direction: column;
+    height: 600px;
+    overflow: auto;
 }
 .message {
     display: inline;
@@ -54,4 +55,8 @@
     word-wrap: break-word;
     width: fit-content;
     max-width: calc(100% - 2em);
+}
+
+.greet {
+    margin: 0 1em;
 }

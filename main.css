@@ -15,24 +15,74 @@ body {
 }
 
 .container {
-    display: flex;
-    width: 100%;
-    height: 100%;
-    margin: 20px 40px;
+  display: flex;
+  width: 100%;
+  height: 100%;
+  margin: 20px 40px;
 }
 
 .videos {
-    display: flex;
-    flex-direction: column;
-    width: 70%;
-    height: 100%;
-    align-items: center;
-    justify-content: center;
+  display: flex;
+  flex-direction: column;
+  width: 70%;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
 }
 
 .chatroom {
-    display: flex;
-    flex-direction: column;
-    width: 30%;
+  display: flex;
+  flex-direction: column;
+  width: 30%;
 }
 
+.overlay {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0,0,0,0.5);
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.dialog {
+  width: 20em;
+  padding: 2em 3em;
+  border-radius: 1em;
+  background-color: white;
+}
+
+.dialog .input-group {
+  margin: 1em 0;
+}
+
+.input-group input {
+  width: 100%;
+  margin: 0.5em 0;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  font-size: 1em;
+}
+
+.input-group input:focus {
+  outline: none;
+}
+
+.submit {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#connectBtn {
+  background-color: #6200ee;
+  padding: 0.5rem 1.3rem;
+  border-radius: 2em;
+}
