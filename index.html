@@ -8,8 +8,10 @@
     <!-- quality selector plugin -->
     <link href="https://unpkg.com/@silvermine/videojs-quality-selector/dist/css/quality-selector.css" rel="stylesheet">
     <link href="https://vjs.zencdn.net/7.10.2/video-js.css" rel="stylesheet" />
+    <link rel="stylesheet" href="Button/style.css">
     <link rel="stylesheet" href="main.css">
     <link rel="stylesheet" href="video.css">
+    <link rel="stylesheet" href="chatroom.css">
 </head>
 <body>
     <div class="container">
@@ -42,12 +44,26 @@
             </div>
         </div>
         <div class="chatroom">
-            <div>
+            <div class="board">
                 <h2>Number of users: 32</h2>
                 <div class="chat">
-                    <div>Hello</div>
-                    <div>World</div>
+                    <div class="message">
+                        <div class="user">Johnny Ho</div>
+                        <p class="text">Hello</p>
+                        <small class="timestamp">11:47 a.m.</small>
+                    </div>
+                    <div class="message">
+                        <div class="user">Peter Chan</div>
+                        <p class="text">Worldsssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss</p>
+                        <small class="timestamp">11:48 a.m.</small>
+                    </div>
                 </div>
+            </div>
+            <div class="inputarea">
+                <div class="textarea">
+                    <input type="text" autofocus/>
+                </div>
+                <button>Send</button>
             </div>
         </div>
     </div>
@@ -60,5 +76,7 @@
     <!-- quality selector plugin -->
     <script src="https://unpkg.com/@silvermine/videojs-quality-selector/dist/js/silvermine-videojs-quality-selector.min.js"></script>
     <script src="video.js" type="text/javascript"></script>
+    <script src="chatroom.js" type="text/javascript"></script>
+    <script src="main.js" type="module"></script>
 </body>
 </html>
