@@ -132,18 +132,18 @@ const triggerQuiz = ({question, answers, correctIndex}) => {
 
     player.src([
         {
-            src: 'http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4',
+            src: 'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4',
             type: 'video/mp4',
             label: '720P',
             selected: true,
         },
         {
-            src: 'http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4',
+            src: 'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4',
             type: 'video/mp4',
             label: '480P',
         },
         {
-            src: 'http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4',
+            src: 'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4',
             type: 'video/mp4',
             label: '360P',
         },
