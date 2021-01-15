@@ -3,6 +3,23 @@ const playbackUrl = 'https://fcc3ddae59ed.us-west-2.playback.live-video.net/api/
 // We can set the element position in control bar so setting children elements
 // https://stackoverflow.com/questions/45727017/how-to-change-the-position-of-videojs-control-bar-elements-order
 
+
+const handleClick = (answEl, answers, correctIndex) => {
+    var handler = function checkAnswer(event) {
+        if (answEl.innerHTML === answers[correctIndex]) {
+            answEl.classList.add('correct');
+        } else {
+            answEl.classList.add('wrong');
+        }
+        const arr = document.getElementsByClassName('answer');
+        for(let i=0; i<arr.length; i++) {
+            arr[i].classList.remove('able');
+            arr[i].onclick = null;
+        }
+    }
+    return handler;
+}
+
 const triggerQuiz = ({question, answers, correctIndex}) => {
     const oldQuiz = document.getElementsByClassName('quiz')[0];
     if (typeof oldQuiz !== 'undefined') {
@@ -20,14 +37,8 @@ const triggerQuiz = ({question, answers, correctIndex}) => {
         const answEl = document.createElement('div');
         answEl.innerHTML = ans;
         answEl.classList.add('answer');
-        answEl.addEventListener('click', e => {
-            if (answEl.innerHTML === answers[correctIndex]) {
-                console.log('correct');
-                answEl.classList.add('correct');
-            } else {
-                console.log('wrong');
-            }
-        })
+        answEl.classList.add('able');
+        answEl.onclick = handleClick(answEl, answers, correctIndex);
         quizContainer.append(answEl);
     })
     quiz.append(quizContainer);

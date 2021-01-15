@@ -143,13 +143,20 @@ interacting with the player.
     background-color: aqua;
     margin: 0.2em;
     text-align: center;
+}
+
+.able {
     cursor: pointer;
 }
 
-.answer:hover {
+.able:hover {
     background-color: brown;
 }
 
 .correct {
     background-color: greenyellow;
+}
+
+.wrong {
+    background-color: red;
 }
