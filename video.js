@@ -33,14 +33,17 @@ const triggerQuiz = ({question, answers, correctIndex}) => {
     const quizContainer = document.createElement('div');
     quizContainer.classList.add('quiz-container');
     quizContainer.append(q);
+    const answerContainer = document.createElement('div');
+    answerContainer.classList.add('answer-container');
     answers.forEach(ans => {
         const answEl = document.createElement('div');
         answEl.innerHTML = ans;
         answEl.classList.add('answer');
         answEl.classList.add('able');
         answEl.onclick = handleClick(answEl, answers, correctIndex);
-        quizContainer.append(answEl);
+        answerContainer.append(answEl);
     })
+    quizContainer.append(answerContainer);
     quiz.append(quizContainer);
     document.getElementById('liveVideo').append(quiz);
 }
