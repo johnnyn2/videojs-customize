@@ -1,3 +1,7 @@
+Date.prototype.messageTime = function() {
+    return ((this.getHours() < 10)?"0":"") + this.getHours() +":"+ ((this.getMinutes() < 10)?"0":"") + this.getMinutes();
+}
+
 const Message = ({userId, message}) => {
     const block = document.createElement('div');
     block.classList.add('message');
@@ -10,7 +14,12 @@ const Message = ({userId, message}) => {
     const timestamp = document.createElement('small');
     timestamp.classList.add('timestamp');
     const currentDate = new Date();
-    timestamp.innerHTML = `${currentDate.getHours()}:${currentDate.getMinutes}`;
+    timestamp.innerHTML = currentDate.messageTime();
+    if (currentDate.getHours() >= 12) {
+        timestamp.innerHTML = timestamp.innerHTML + ' p.m.';
+    } else {
+        timestamp.innerHTML = timestamp.innerHTML + ' a.m.';
+    }
     block.append(user);
     block.append(txt);
     block.append(timestamp);
@@ -44,7 +53,7 @@ const Message = ({userId, message}) => {
                 const latency = Date.now() - sendTime;
                 console.log(`From server: ${e.data}, latency = ${latency}ms, at ${new Date().toTimeString()}`);
                 const element = Message(data);
-                console.log('message: ', element);
+                console.log('ws receive message: ', element);
                 document.getElementsByClassName('chat')[0].append(element);
             }
 
