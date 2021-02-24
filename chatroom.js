@@ -80,6 +80,12 @@ const Message = ({userId, message}) => {
                 }
             })
 
+            document.getElementById('message-input').addEventListener('keypress', function(e) {
+                if (e.key === 'Enter') {
+                    sendBtn.click();
+                }
+            })
+
             ws.onclose = e => {
                 console.log(`closing connection: ${new Date().toTimeString()}`);
                 console.log(e);
