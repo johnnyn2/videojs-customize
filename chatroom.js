@@ -68,7 +68,7 @@ const Message = ({userId, message}) => {
                             channelId,
                             streamId: 's1',
                             userId,
-                            username: 'front',
+                            userName: 'front',
                             message,
                         }
                     });
