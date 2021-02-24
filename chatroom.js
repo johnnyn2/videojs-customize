@@ -2,9 +2,10 @@ Date.prototype.messageTime = function() {
     return ((this.getHours() < 10)?"0":"") + this.getHours() +":"+ ((this.getMinutes() < 10)?"0":"") + this.getMinutes();
 }
 
-const Message = ({userId, message}) => {
+const Message = ({userId, message}, isMyMessage) => {
     const block = document.createElement('div');
     block.classList.add('message');
+    if (isMyMessage) { block.classList.add('my-message'); }
     const user = document.createElement('div');
     user.classList.add('user');
     user.innerHTML = userId;
@@ -52,7 +53,7 @@ const Message = ({userId, message}) => {
                 const data = JSON.parse(e.data);
                 const latency = Date.now() - sendTime;
                 console.log(`From server: ${e.data}, latency = ${latency}ms, at ${new Date().toTimeString()}`);
-                const element = Message(data);
+                const element = Message(data, data.userId === userId);
                 console.log('ws receive message: ', element);
                 document.getElementsByClassName('chat')[0].append(element);
             }

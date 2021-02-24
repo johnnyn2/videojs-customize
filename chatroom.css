@@ -38,8 +38,13 @@
     overflow: auto;
 }
 .message {
-    display: inline;
+    display: flex;
+    flex-direction: column;
     margin: 0.4em 0;
+}
+
+.my-message {
+    align-items: flex-end;
 }
 
 .message .user {
