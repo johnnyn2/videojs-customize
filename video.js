@@ -152,6 +152,12 @@ const triggerQuiz = ({question, answers, correctIndex}) => {
     // Add the TitleBar as a child of the player and provide it some text 
     // in its options.
     player.addChild('TitleBar', { text: 'Simple Cartoon' });
+    // player.addChild('Emoji', {code: '&#128514;'});
+    player.addChild('Emoji', {code: 'smile'});
+    setInterval(() => {
+        player.addChild('Emoji', {code: 'smile'});
+    }, 1000)
+    
 
     registerIVSTech(videojs);
     registerIVSQualityPlugin(videojs);
